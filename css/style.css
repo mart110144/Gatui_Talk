@@ -1,0 +1,53 @@
+body {
+  font-family: 'Prompt', sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ซ่อน scrollbar ของแถบหมวดหมู่ */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* แท็บเรียงลำดับ (สลับ class active ด้วย JS) */
+.sort-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #64748b;
+  transition: color 0.15s, border-color 0.15s;
+}
+.sort-tab:hover { color: #1e293b; }
+.sort-tab.active-trending { border-color: #f97316; color: #ea580c; font-weight: 600; }
+.sort-tab.active-latest { border-color: #2563eb; color: #2563eb; font-weight: 600; }
+
+/* Modal animation */
+.modal-card { animation: modal-in 0.18s ease-out; }
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(0.96) translateY(6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Toast animation */
+.toast { animation: toast-in 0.2s ease-out; }
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* จำกัดข้อความ 2 บรรทัดในการ์ดกระทู้ */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
